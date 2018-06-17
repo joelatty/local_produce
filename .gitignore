@@ -17,6 +17,9 @@ modules.xml
 *.iws
 *.iml
 *.ipr
+**/.idea/workspace.xml
+**/.idea/tasks.xml
+**/.idea/vcs.xml
 /out/
 
 ### NetBeans ###
@@ -25,4 +28,7 @@ modules.xml
 /nbbuild/
 /dist/
 /nbdist/
+
 /.nb-gradle/
+
+#modules.xml
