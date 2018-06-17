@@ -15,8 +15,10 @@ public class Profile extends AuditModel {
     @Column(name = "profile_id")
     private Long profileId;
 
-    private String first_name;
-    private String last_name;
+    private String type;
+    private String firstName;
+    private String lastName;
+    private String email;
     private String mobile;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -33,20 +35,36 @@ public class Profile extends AuditModel {
         this.profileId = profileId;
     }
 
-    public String getFirst_name() {
-        return first_name;
+    public String getType() {
+        return type;
     }
 
-    public void setFirst_name(String first_name) {
-        this.first_name = first_name;
+    public void setType(String type) {
+        this.type = type;
     }
 
-    public String getLast_name() {
-        return last_name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setLast_name(String last_name) {
-        this.last_name = last_name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public String getMobile() {

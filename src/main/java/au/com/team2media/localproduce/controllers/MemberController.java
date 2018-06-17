@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @RestController
 public class MemberController {
@@ -31,6 +32,12 @@ public class MemberController {
         return memberRepository.save(member);
     }
 
+
+    @GetMapping("/member/{memberId}/profiles")
+    public List<Profile> getProfilesByMemberId(@PathVariable Long memberId) {
+        return profileRepository.findByMemberMemberId(memberId);
+    }
+
     @RequestMapping(value = "/member/{memberId}/profile", method = RequestMethod.POST)
     public Profile createProfile(@PathVariable Long memberId,
                                  @Valid @RequestBody Profile profile) {
@@ -44,7 +51,7 @@ public class MemberController {
 
 
 
-    @RequestMapping(value = "/members/{memberId}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/member/{memberId}", method = RequestMethod.PUT)
     public Member updateMember(@PathVariable Long memberId,
                                    @Valid @RequestBody Member memberRequest) {
         return memberRepository.findById(memberId)
